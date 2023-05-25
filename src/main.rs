@@ -100,8 +100,8 @@ fn main() -> Result<()> {
             for (k, d) in keywords.iter().zip(dist) {
                 println!("{}: {} distance {}", root, k, d);
             }
+            println!();
         }
-        println!();
     }
     Ok(())
 }
