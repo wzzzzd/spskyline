@@ -6,12 +6,7 @@ use std::hash::Hash;
 
 use num_traits::bounds::UpperBounded;
 use num_traits::{One, Zero};
-use petgraph::algo::BoundedMeasure;
-use petgraph::prelude::DiGraphMap;
-use petgraph::visit::{
-    Bfs, IntoNeighbors, IntoNeighborsDirected, IntoNodeIdentifiers, IntoNodeReferences, NodeCount,
-    Visitable,
-};
+use petgraph::visit::{IntoNeighborsDirected, IntoNodeIdentifiers};
 use petgraph::Direction;
 
 /// Main query function. Each entry of `node_to_keyword` should be sorted.

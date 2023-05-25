@@ -29,10 +29,9 @@ fn parse_keywords(s: &str) -> Result<Vec<u32>> {
     Ok(s.split(',').map(|k| k.parse()).try_collect()?)
 }
 
-fn build_graph(
-    edge_file_path: &Path,
-    node_keyword_file_path: &Path,
-) -> Result<(DiGraphMap<u32, ()>, HashMap<u32, Vec<u32>>)> {
+type BuildResult = Result<(DiGraphMap<u32, ()>, HashMap<u32, Vec<u32>>)>;
+
+fn build_graph(edge_file_path: &Path, node_keyword_file_path: &Path) -> BuildResult {
     let edge_file = File::open(edge_file_path)?;
     let node_keyword_file = File::open(node_keyword_file_path)?;
     let mut graph = DiGraphMap::new();
